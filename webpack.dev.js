@@ -3,5 +3,10 @@ const webpackConfig = require('./webpack.config');
 
 module.exports = merge(webpackConfig, {
   mode: 'development',
-  entry: './src/index.tsx',
+  entry: './src/index.js',
+  devServer:{
+    port: 3333,
+    open: true,
+    hot: true,
+  },
 });
