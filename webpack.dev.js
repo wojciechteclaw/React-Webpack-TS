@@ -3,7 +3,7 @@ const webpackConfig = require('./webpack.config');
 
 module.exports = merge(webpackConfig, {
   mode: 'development',
-  entry: './src/index.js',
+  entry: './src/index.tsx',
   devServer:{
     port: 3333,
     open: true,
