@@ -9,6 +9,9 @@ const SyncAction = () => {
     const onClick = () => {
         let result = getNthFibonacciItemValue(fibonacciValue);
         setFibonacciResult(result)
+        setTimeout(() => {
+            setFibonacciResult(null)
+        }, 5000)
     }
 
     const onInputChange = (e:React.ChangeEvent<HTMLInputElement>) => {

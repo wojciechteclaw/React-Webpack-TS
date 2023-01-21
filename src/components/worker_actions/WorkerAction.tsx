@@ -12,6 +12,9 @@ const WorkerAction = () => {
         worker.onmessage = (e) => {
             let {fibonacciResult} = e.data
             setFibonacciResult(fibonacciResult)
+            setTimeout(() => {
+                setFibonacciResult(null)
+            }, 5000)
         }
     }
 
