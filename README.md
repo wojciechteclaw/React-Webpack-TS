@@ -4,6 +4,7 @@
 ### Dependencies
 * react
 * react-dom
+* worker-plugin
 
 ### Dev Dependencies
 * @babel/core
@@ -13,6 +14,7 @@
 * @types/react
 * @types/react-dom
 * babel-loader
+* css-loader
 * html-webpack-plugin
 * ts-loader
 * typescript
@@ -50,7 +52,11 @@ module.exports = {
                 use: {
                     loader: 'ts-loader',
                 }
-            }
+            },
+            {
+                test: /\.css$/i,
+                use: ["style-loader", "css-loader"],
+            },
         ]
     },
     resolve: {
@@ -58,7 +64,52 @@ module.exports = {
     }
 }
 ```
-This is rules into JS and TS sections and use dedicated loader.
+This is rules into JS and TS sections and uses a dedicated loader.
 <b>The crucial point is to keep extensions in the order</b>
 
-Than in dedicated webpack.dev and webpack.prod one might extend config by dedicated setup depending upon a stage.
+Then in dedicated webpack.dev and webpack.prod, one might extend the config by dedicated setup depending upon a stage.
+
+
+
+## Worker
+### Define worker
+https://developer.mozilla.org/en-US/docs/Web/API/Worker/message_event
+
+```
+self.addEventListener("message", (event) => {
+  //unpack the message content
+  const { data } = event;
+  // my fancy logic
+  ...
+  // post response
+  self.postMessage({fibonacciResult});
+});
+```
+
+### Using worker
+
+```
+import React, { useEffect, useState } from 'react'
+
+const MyReactComponent = () => {
+  
+    useEffect(() => {
+        const worker = new Worker(newURL("workerpath.ts", import.meta.url), type:"module"})
+        worker.postMessage({type:"messageType", someData:{...}})
+        // One might listen for the response
+        worker.onmessage = (e) => {
+            let {responseData} = e.data
+            // logic
+        }
+    }, [someVariable])
+  
+    return (
+    <div>
+        // content
+    </div>
+  )
+}
+
+export {MyReactComponent}
+
+```
