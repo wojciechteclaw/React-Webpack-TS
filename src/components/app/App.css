@@ -1,0 +1,60 @@
+body {
+    background-color: #B4E6F4;
+}
+
+#backgroundToggle{
+    margin-top: 30px;
+    background-color: #FFC300;
+    font-size: 16px;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    font-weight: 600;
+    width: 100%;
+    max-width: 350px;
+}
+
+#syncaction {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 3px;
+    margin-left: 10px;
+    border-radius: 3px;
+  }
+
+  #syncactioncontainer{
+    margin-top: 30px;
+    border: 1px solid #ccc;
+    padding: 20px;
+  }
+
+#asyncaction {
+    background-color: #D87F0E;
+    border: none;
+    color: white;
+    padding: 3px;
+    margin-left: 10px;
+    border-radius: 3px;
+  }
+
+  #asyncactioncontainer{
+    margin-top: 30px;
+    border: 1px solid #ccc;
+    padding: 20px;
+  }
+
+#workeraction {
+    background-color: #DA8FDC;
+    border: none;
+    color: white;
+    padding: 3px;
+    margin-left: 10px;
+    border-radius: 3px;
+  }
+
+  #workeractioncontainer{
+    margin-top: 30px;
+    border: 1px solid #ccc;
+    padding: 20px;
+  }
