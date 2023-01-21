@@ -86,7 +86,7 @@ self.addEventListener("message", (event) => {
 });
 ```
 
-### Using worker
+### Workers usage
 
 ```
 import React, { useEffect, useState } from 'react'
