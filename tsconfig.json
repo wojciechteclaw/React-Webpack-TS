@@ -1,7 +1,7 @@
 {
     "compilerOptions": {
-        "target": "es2017",
-        "module": "commonjs",
+        "target": "ES5",
+        "module": "ESNext",
         "strictNullChecks": true,
         "esModuleInterop": true,
         "jsx": "react-jsx"
