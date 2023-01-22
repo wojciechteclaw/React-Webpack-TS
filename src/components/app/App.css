@@ -1,5 +1,9 @@
 body {
-    background-color: #B4E6F4;
+    background-color: #F78C8C;
+}
+
+.container {
+  max-width: 50%;
 }
 
 #backgroundToggle{
@@ -27,6 +31,8 @@ body {
     margin-top: 30px;
     border: 1px solid #ccc;
     padding: 20px;
+    background-color: #EFEFEC;
+    border-radius: 20px;
   }
 
 #asyncaction {
@@ -42,6 +48,8 @@ body {
     margin-top: 30px;
     border: 1px solid #ccc;
     padding: 20px;
+    background-color: #D6D6D6;
+    border-radius: 20px;
   }
 
 #workeraction {
@@ -57,6 +65,8 @@ body {
     margin-top: 30px;
     border: 1px solid #ccc;
     padding: 20px;
+    background-color: #EFEFEC;
+    border-radius: 20px;
   }
 
 #workercomlinkaction {
@@ -72,4 +82,6 @@ body {
     margin-top: 30px;
     border: 1px solid #ccc;
     padding: 20px;
+    background-color: #D6D6D6;
+    border-radius: 20px;
   }

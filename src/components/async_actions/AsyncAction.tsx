@@ -21,7 +21,7 @@ const AsyncAction = () => {
     }
   
     return (
-    <div id="asyncactioncontainer">
+    <div id="asyncactioncontainer" className='container'>
         <h3>Async Action</h3>
         <input type="number" onChange={onInputChange}/>
         <button id='asyncaction' onClick={onClick}>Calculate</button>

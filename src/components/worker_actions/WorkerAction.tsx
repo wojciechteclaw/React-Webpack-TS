@@ -25,7 +25,7 @@ const WorkerAction = () => {
     }
   
     return (
-    <div id="workeractioncontainer">
+    <div id="workeractioncontainer" className='container'>
         <h3>Worker Action</h3>
         <input type="number" onChange={onInputChange}/>
         <button id='workeraction' onClick={onClick}>Calculate</button>

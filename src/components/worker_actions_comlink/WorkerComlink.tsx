@@ -27,7 +27,7 @@ const WorkerComlink = () => {
   };
 
   return (
-    <div id="workercomlinkactioncontainer">
+    <div id="workercomlinkactioncontainer" className='container'>
       <h3>Worker Comlink Action</h3>
       <input type="number" onChange={onInputChange} />
       <button id="workercomlinkaction" onClick={onClick}>

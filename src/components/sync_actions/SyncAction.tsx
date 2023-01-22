@@ -21,7 +21,7 @@ const SyncAction = () => {
     }
   
     return (
-    <div id="syncactioncontainer">
+    <div id="syncactioncontainer" className='container'>
         <h3>Sync Action</h3>
         <input type="number" onChange={onInputChange}/>
         <button id='syncaction' onClick={onClick}>Calculate</button>

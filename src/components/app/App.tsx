@@ -9,9 +9,11 @@ import { WorkerComlink } from "../worker_actions_comlink/WorkerComlink";
 
 const App = () => {
 
+
+
   const backgroundClick = () => {
 
-    let color = "rgb(236, 234, 230)"
+    let color = "rgb(247, 140, 140)"
     if (document.body.style.backgroundColor !== `${color}`) {
       document.body.style.backgroundColor = `${color}`;
     } else {
