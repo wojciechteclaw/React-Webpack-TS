@@ -58,3 +58,18 @@ body {
     border: 1px solid #ccc;
     padding: 20px;
   }
+
+#workercomlinkaction {
+    background-color: #E4F751;
+    border: none;
+    color: black;
+    padding: 3px;
+    margin-left: 10px;
+    border-radius: 3px;
+  }
+
+  #workercomlinkactioncontainer{
+    margin-top: 30px;
+    border: 1px solid #ccc;
+    padding: 20px;
+  }

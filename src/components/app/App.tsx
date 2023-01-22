@@ -3,6 +3,7 @@ import "./App.css";
 import {SyncAction} from '../sync_actions/SyncAction'
 import {AsyncAction} from '../async_actions/AsyncAction'
 import { WorkerAction } from "../worker_actions/WorkerAction";
+import { WorkerComlink } from "../worker_actions_comlink/WorkerComlink";
 
 
 
@@ -24,6 +25,7 @@ const App = () => {
       <SyncAction/>
       <AsyncAction/>
       <WorkerAction/>
+      <WorkerComlink/>
       <button onClick={backgroundClick} id="backgroundToggle">Change background</button>
     </div>
   );
