@@ -2,9 +2,9 @@
 
 ## Dependencies
 ### Dependencies
+* comlink
 * react
 * react-dom
-* worker-plugin
 
 ### Dev Dependencies
 * @babel/core
@@ -72,7 +72,8 @@ Then in dedicated webpack.dev and webpack.prod, one might extend the config by d
 
 
 ## Worker
-### Define worker
+### Default approach
+#### Define worker
 https://developer.mozilla.org/en-US/docs/Web/API/Worker/message_event
 
 ```
@@ -86,7 +87,7 @@ self.addEventListener("message", (event) => {
 });
 ```
 
-### Workers usage
+#### Workers usage
 
 ```
 import React, { useEffect, useState } from 'react'
@@ -113,3 +114,59 @@ const MyReactComponent = () => {
 export {MyReactComponent}
 
 ```
+
+#### Comlink library
+
+* Add library to TS paths:
+```
+"paths": {
+            "comlink": ["./node_modules/comlink/dist/esm/comlink"]
+         }
+```
+
+* Create a worker
+```
+import { expose } from 'comlink';
+// optionally import additional modules with heavy calculation
+
+// Here is a sample method to wrap in a worker
+const thisIsMyMethod = () => {}
+
+// Create a worker
+
+const worker = {
+    thisIsMyMethod
+}
+
+// export a worker type to wrap it in a component
+export type WorkerType = typeof worker;
+
+
+// The comlink.expose() method is used in Comlink to expose an object or function to a web worker.
+// It takes an object or function as its argument, and returns a proxy object that can be passed 
+// to the worker. The worker can then call methods on the proxy object as if they were local, 
+// while the calls are actually made on the original object or function.
+
+expose (worker);
+```
+
+* Use a worker in a component:
+
+```
+const onClick = async () => {
+    const worker = new Worker(
+      new URL("../../workers/my_fancy_comlink_worker.ts", import.meta.url),
+      { type: "module", name: "fibonacci" }
+    );
+    const myWorker = wrap<WorkerType>(worker);
+    // tasks might destructured
+    task.thisIsMyMethod(params)
+  };
+
+```
+
+### BUILD
+
+`npm run build`
+
+After building the application in `./dist/` one might observe two additional bundle files which are created based on the number of additional workers in your application.
